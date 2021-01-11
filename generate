@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+outdir=Generated
+sourcever=4.3.5
+url=https://github.com/fpaquet/gtksheet/archive/V$sourcever.tar.gz
+localfile=gtksheet-v$sourcever.tar.gz
+tempapi=GtkSheetSharp-api.xml
+api=$outdir/$tempapi
+cp $tempapi $api
+metadata=GtkSheetSharp.metadata
+
+#wget $url -O $localfile
+#tar xf $localfile
+
+if [ -d $outdir ];
+then
+    rm -rf $outdir
+fi
+
+gapi3-parser GtkSheetSharp.source || exit
+
+mkdir $outdir
+cp $tempapi $api
+
+gapi3-fixup --api=$api --metadata=$metadata || exit
+gapi3-codegen --outdir=$outdir `pkg-config --cflags gtk-sharp-3.0` --include=../GtkSharp/Source/Libs/CairoSharp/Generated/CairoSharp-api.xml --generate $api
+
+#rm $localfile
+#rm -rf $localfile

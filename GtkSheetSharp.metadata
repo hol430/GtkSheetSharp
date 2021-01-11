@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<metadata>
+  <!-- ############# -->
+  <!-- 1. Copy Nodes -->
+  <!-- ############# -->
+
+  <!-- ############### -->
+  <!-- 2. Remove Nodes -->
+  <!-- ############### -->
+
+  <!-- Remove the GtkSheet* parameter from all methods on GtkSheet type. (The parser thought they were static). -->
+  <remove-node path="/api/namespace/class[@cname='GtkSheet_']/method[@shared='true']/parameters/parameter[@name='sheet']" />
+
+  <!-- ############ -->
+  <!-- 3. Add Nodes -->
+  <!-- ############ -->
+
+  <!-- Add ChildAttr struct (empty for now). -->
+  <add-node path="/api/namespace"><struct name="CellAttr" cname="GtkSheetCellAttr" opaque="true" /></add-node>
+
+  <!-- Add Child struct (empty for now). -->
+  <add-node path="/api/namespace"><struct name="Child" cname="GtkSheetChild" opaque="true" /></add-node>
+
+  <!-- Add Range struct (empty for now). -->
+  <add-node path="/api/namespace">
+    <struct name="Range" cname="GtkSheetRange">
+      <field name="Row0" cname="row0" type="gint" />
+      <field name="Cow0" cname="col0" type="gint" />
+      <field name="RowI" cname="rowi" type="gint" />
+      <field name="ColI" cname="coli" type="gint" />
+    </struct>
+  </add-node>
+
+  <!-- Add a class_struct node to GtkSheet. -->
+  <add-node path="/api/namespace/class[@cname='GtkSheet_']">
+    <class_struct cname="GtkSheetClass">
+      <field name="ParentClass" cname="parent_class" type="GtkContainerClass" />
+    </class_struct>
+  </add-node>
+
+  <!-- Add the missing GtkSheetVerticalJustification enum. -->
+  <add-node path="/api/namespace">
+    <enum name="VerticalJustification" cname="GtkSheetVerticalJustification" gtype="gtk_sheet_vertical_justification_get_type" type="enum">
+      <member cname="GTK_SHEET_VERTICAL_JUSTIFICATION_DEFAULT" name="Default" />
+      <member cname="GTK_SHEET_VERTICAL_JUSTIFICATION_TOP" name="Top" />
+      <member cname="GTK_SHEET_VERTICAL_JUSTIFICATION_MIDDLE" name="Middle" />
+      <member cname="GTK_SHEET_VERTICAL_JUSTIFICATION_BOTTOM" name="Bottom" />
+    </enum>
+  </add-node>
+
+  <!-- #################### -->
+  <!-- 4. Change Node Types -->
+  <!-- #################### -->
+
+  <!-- Change GtkSheet from a class to an object. -->
+  <change-node-type path="/api/namespace/class[@cname='GtkSheet_']">object</change-node-type>
+
+  <!-- Fix the GtkSheet constructors, which were parsed as static methods for some reason. -->
+  <change-node-type path="/api/namespace/object[@cname='GtkSheet_']/method[@cname='gtk_sheet_new']">constructor</change-node-type>
+  <change-node-type path="/api/namespace/object[@cname='GtkSheet_']/method[@cname='gtk_sheet_new_browser']">constructor</change-node-type>
+  <change-node-type path="/api/namespace/object[@cname='GtkSheet_']/method[@cname='gtk_sheet_new_with_custom_entry']">constructor</change-node-type>
+
+  <!-- #################### -->
+  <!-- 5. Change Attributes -->
+  <!-- #################### -->
+
+  <!-- Change namespace name to GtkSheet -->
+  <attr path="/api/namespace" name="name">GtkSheet</attr>
+
+  <!-- fixme: temporarily removing references to glade types -->
+  <attr path="/api/namespace/object[@cname='GtkDataEntry']/implements/interface[@cname='GtkBuildable']" name="hidden">true</attr>
+  <attr path="/api/namespace/object[@cname='GtkDataTextView']/implements/interface[@cname='GtkBuildable']" name="hidden">true</attr>
+  <attr path="/api/namespace/object[@cname='GtkSheetColumn']/implements/interface[@cname='GtkBuildable']" name="hidden">true</attr>
+
+  <!-- Fix type name of GtkSheetColumn. -->
+  <attr path="/api/namespace/object[@cname='GtkSheetColumn']" name="name">Column</attr>
+
+  <!-- GtkSheetColumn inherits from GtkBin. Unsure why this wasn't picked up automatically. -->
+  <attr path="/api/namespace/object[@cname='GtkSheetColumn']" name="parent">GtkBin</attr>
+
+  <!-- Fix cname of GtkSheet type (GtkSheet_ -> GtkSheet). -->
+  <attr path="/api/namespace/object[@cname='GtkSheet_']" name="cname">GtkSheet</attr>
+
+  <!-- Set shared to false on all GtkSheet methods. -->
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method" name="shared">false</attr>
+
+  <!-- (...except for gtk_sheet_get_type(), which *is* a static method.) -->
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_get_type']" name="shared">true</attr>
+
+  <!-- Specify parent class (GtkContainer) on GtkSheet. -->
+  <attr path="/api/namespace/object[@cname='GtkSheet']" name="parent">GtkContainer</attr>
+
+  <!-- There are a number of getter methods which aren't named correctly in the C API (the name is not of the form gtk_sheet_get_xxx).
+       We fix these names in the C# API so that the get/set methods are combined into a property -->
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_justify_entry']" name="name">GetJustifyEntry</attr>
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_autoresize']" name="name">GetAutoResize</attr>
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_autoresize_columns']" name="name">GetAutoResizeColumns</attr>
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_autoresize_rows']" name="name">GetAutoResizeRows</attr>
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_autoscroll']" name="name">GetAutoscroll</attr>
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_clip_text']" name="name">GetClipText</attr>
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_locked']" name="name">GetLocked</attr>
+  
+  <!-- Remove the return-type attribute from the constructors. (It only exists because they were incorrectly parsed as methods.) -->
+  <attr path="/api/namespace/object[@cname='GtkSheet']/constructor/return-type" name="hidden">1</attr>
+
+  <!-- Fixme: The code generator can't resolve the GCallback type. For now, just hide the methods which reference this type. -->
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_entry_signal_connect_changed']" name="hidden">true</attr>
+  <attr path="/api/namespace/object[@cname='GtkSheet']/method[@cname='gtk_sheet_entry_signal_disconnect_by_func']" name="hidden">true</attr>
+
+  <!-- fixme: temporarily hide gtkitementry (it causes a runtime error) -->
+  <attr path="/api/namespace/object[@cname='GtkItemEntry']" name="hidden">1</attr>
+
+  <!-- ############# -->
+  <!-- 6. Move Nodes -->
+  <!-- ############# -->
+
+  <!-- #################### -->
+  <!-- 7. Remove Attributes -->
+  <!-- #################### -->
+
+  <!-- Remove name and attributes from GtkSheet constructors. These only exist because the constructors were parsed as static methods. -->
+  <remove-attr path="/api/namespace/object[@cname='GtkSheet']/constructor" name="name" />
+  <remove-attr path="/api/namespace/object[@cname='GtkSheet']/constructor" name="shared" />
+
+</metadata>

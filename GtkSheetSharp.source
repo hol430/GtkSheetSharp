@@ -1,0 +1,15 @@
+<gapi-parser-input>
+  <api filename="GtkSheetSharp-api.xml">
+    <library name="libgtksheet-4.0.so">
+      <namespace name="Gtk">
+        <dir>gtksheet-4.3.5/gtksheet</dir>
+        <exclude>gtksheet-4.3.5/gtksheet/icons.h</exclude>
+        <exclude>gtksheet-4.3.5/gtksheet/pixmaps.h</exclude>
+        <exclude>gtksheet-4.3.5/gtksheet/gtksheetdebug.h</exclude>
+        <exclude>gtksheet-4.3.5/gtksheet/gtksheet-compat.h</exclude>
+        <exclude>gtksheet-4.3.5/gtksheet/gtksheetfeatures.h</exclude>
+        <exclude>gtksheet-4.3.5/gtksheet/testgtksheet.c</exclude>
+      </namespace>
+    </library>
+  </api>
+</gapi-parser-input>
