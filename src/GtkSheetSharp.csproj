@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <PackageProjectUrl>https://github.com/hol430/GtkSheetSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hol430/GtkSheetSharp</RepositoryUrl>
+    <Description>GtkSheetSharp is a C# wrapper for the GtkSheet library.</Description>
+    <PackageTags>gtksheet;gtksheetsharp;gtksheet-sharp;wrapper</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="GtkSharp" Version="3.22.25.*" />
+  </ItemGroup>
+</Project>

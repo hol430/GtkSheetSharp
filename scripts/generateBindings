@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script generates the C# bindings from the API file.
+
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd $dir/..
+
+outdir=src/Generated
+tempapi=GtkSheetSharp-api.xml
+api=$outdir/$tempapi
+metadata=GtkSheetSharp.metadata
+
+if [ -d $outdir ];
+then
+    rm -rf $outdir
+fi
+
+mkdir $outdir
+cp $tempapi $api
+
+gapi3-fixup --api=$api --metadata=$metadata || exit
+gapi3-codegen --outdir=$outdir `pkg-config --cflags gtk-sharp-3.0` --include=../GtkSharp/Source/Libs/CairoSharp/Generated/CairoSharp-api.xml --generate $api

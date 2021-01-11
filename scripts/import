@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script generates the API file from the C sources.
+
+localfile=$sourcedir.tar.gz
+sourcever=4.3.5
+url=https://github.com/fpaquet/gtksheet/archive/V$sourcever.tar.gz
+sourcedir=gtksheet-$sourcever
+sourcefile=GtkSheetSharp.source
+
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd $dir/..
+
+wget $url -O $localfile
+tar xf $localfile
+gapi3-parser $sourcefile
+rm $localfile
+rm -rf $sourcedir
