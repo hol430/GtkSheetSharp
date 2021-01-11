@@ -20,6 +20,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GtkSharp\Source\Libs\GtkSharp\GtkSharp.csproj" />
+    <PackageReference Include="GtkSharp" Version="3.22.25.*" />
   </ItemGroup>
 </Project>
