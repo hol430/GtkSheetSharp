@@ -1,0 +1,1522 @@
+<?xml version="1.0"?>
+<api parser_version="2">
+  <!--
+
+        This file was automatically generated.
+        Please DO NOT MODIFY THIS FILE, modify .metadata files instead.
+
+-->
+  <namespace name="Gtk" library="libgtksheet-4.0.so">
+    <enum name="SheetAttrType" cname="GtkSheetAttrType" gtype="gtk_sheet_attr_type_get_type" type="enum">
+      <member cname="GTK_SHEET_FOREGROUND" name="Foreground" />
+      <member cname="GTK_SHEET_BACKGROUND" name="Background" />
+      <member cname="GTK_SHEET_FONT" name="Font" />
+      <member cname="GTK_SHEET_JUSTIFICATION" name="Justification" />
+      <member cname="GTK_SHEET_BORDER" name="Border" />
+      <member cname="GTK_SHEET_BORDER_COLOR" name="BorderColor" />
+      <member cname="GTK_SHEET_IS_EDITABLE" name="IsEditable" />
+      <member cname="GTK_SHEET_IS_VISIBLE" name="IsVisible" />
+    </enum>
+    <enum name="SheetState" cname="GtkSheetState" gtype="gtk_sheet_state_get_type" type="enum">
+      <member cname="GTK_SHEET_NORMAL" name="Normal" />
+      <member cname="GTK_SHEET_ROW_SELECTED" name="RowSelected" />
+      <member cname="GTK_SHEET_COLUMN_SELECTED" name="ColumnSelected" />
+      <member cname="GTK_SHEET_RANGE_SELECTED" name="RangeSelected" />
+    </enum>
+    <object name="DataEntry" cname="GtkDataEntry" parent="GtkEntry">
+      <class_struct cname="GtkDataEntryClass">
+        <field name="ParentClass" cname="parent_class" type="GtkEntryClass" />
+      </class_struct>
+      <field name="DataType" cname="data_type" type="gchar*" />
+      <field name="DataFormat" cname="data_format" type="gchar*" />
+      <field name="Description" cname="description" type="gchar*" />
+      <field name="MaxLengthBytes" cname="max_length_bytes" type="gint" />
+      <property name="Datatype" cname="datatype" type="gchar*" readable="true" writeable="true" />
+      <property name="Dataformat" cname="dataformat" type="gchar*" readable="true" writeable="true" />
+      <property name="Description" cname="description" type="gchar*" readable="true" writeable="true" />
+      <property name="Text" cname="text" type="gchar*" readable="true" writeable="true" />
+      <property name="MaxLengthBytes" cname="max-length-bytes" type="gint" readable="true" writeable="true" />
+      <implements>
+        <interface cname="GtkBuildable" />
+      </implements>
+      <method name="GetDataFormat" cname="gtk_data_entry_get_data_format">
+        <return-type type="const-gchar*" />
+      </method>
+      <method name="GetDataType" cname="gtk_data_entry_get_data_type">
+        <return-type type="const-gchar*" />
+      </method>
+      <method name="GetDescription" cname="gtk_data_entry_get_description">
+        <return-type type="const-gchar*" />
+      </method>
+      <method name="GetMaxLengthBytes" cname="gtk_data_entry_get_max_length_bytes">
+        <return-type type="gint" />
+      </method>
+      <method name="GetText" cname="gtk_data_entry_get_text">
+        <return-type type="const-gchar*" />
+      </method>
+      <method name="GetType" cname="gtk_data_entry_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <constructor cname="gtk_data_entry_new" />
+      <method name="SetDataFormat" cname="gtk_data_entry_set_data_format">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-gchar*" name="data_format" />
+        </parameters>
+      </method>
+      <method name="SetDataType" cname="gtk_data_entry_set_data_type">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-gchar*" name="data_type" />
+        </parameters>
+      </method>
+      <method name="SetDescription" cname="gtk_data_entry_set_description">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-gchar*" name="description" />
+        </parameters>
+      </method>
+      <method name="SetMaxLengthBytes" cname="gtk_data_entry_set_max_length_bytes">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="gint" name="max_length_bytes" />
+        </parameters>
+      </method>
+      <method name="SetText" cname="gtk_data_entry_set_text">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-gchar*" name="text" />
+        </parameters>
+      </method>
+    </object>
+    <object name="DataTextView" cname="GtkDataTextView" parent="GtkTextView">
+      <class_struct cname="GtkDataTextViewClass">
+        <field name="ParentClass" cname="parent_class" type="GtkTextViewClass" />
+      </class_struct>
+      <field name="Description" cname="description" type="gchar*" />
+      <field name="MaxLength" cname="max_length" type="gint" />
+      <field name="MaxLengthBytes" cname="max_length_bytes" type="gint" />
+      <property name="Description" cname="description" type="gchar*" readable="true" writeable="true" />
+      <property name="MaxLength" cname="max-length" type="gint" readable="true" writeable="true" />
+      <property name="MaxLengthBytes" cname="max-length-bytes" type="gint" readable="true" writeable="true" />
+      <implements>
+        <interface cname="GtkBuildable" />
+      </implements>
+      <method name="GetDescription" cname="gtk_data_text_view_get_description">
+        <return-type type="const-gchar*" />
+      </method>
+      <method name="GetMaxLength" cname="gtk_data_text_view_get_max_length">
+        <return-type type="gint" />
+      </method>
+      <method name="GetMaxLengthBytes" cname="gtk_data_text_view_get_max_length_bytes">
+        <return-type type="gint" />
+      </method>
+      <method name="GetType" cname="gtk_data_text_view_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <constructor cname="gtk_data_text_view_new" />
+      <method name="SetDescription" cname="gtk_data_text_view_set_description">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-gchar*" name="description" />
+        </parameters>
+      </method>
+      <method name="SetMaxLength" cname="gtk_data_text_view_set_max_length">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="gint" name="max_length" />
+        </parameters>
+      </method>
+      <method name="SetMaxLengthBytes" cname="gtk_data_text_view_set_max_length_bytes">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="gint" name="max_length_bytes" />
+        </parameters>
+      </method>
+    </object>
+    <object name="ItemEntry" cname="GtkItemEntry" parent="GtkEntry">
+      <class_struct cname="GtkItemEntryClass">
+        <field name="ParentClass" cname="parent_class" type="GtkEntryClass" />
+      </class_struct>
+      <field name="TextMaxSize" cname="text_max_size" type="gint" />
+      <field name="ItemTextSize" cname="item_text_size" type="gint16" />
+      <field name="ItemNBytes" cname="item_n_bytes" type="gint16" />
+      <field name="MaxLengthBytes" cname="max_length_bytes" type="gint" />
+      <field name="Justification" cname="justification" type="GtkJustification" />
+      <implements />
+      <method name="GetCursorVisible" cname="gtk_item_entry_get_cursor_visible">
+        <return-type type="gboolean" />
+      </method>
+      <method name="GetMaxLengthBytes" cname="gtk_item_entry_get_max_length_bytes">
+        <return-type type="gint" />
+      </method>
+      <method name="GetType" cname="gtk_item_entry_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <constructor cname="gtk_item_entry_new" />
+      <constructor cname="gtk_item_entry_new_with_max_length">
+        <parameters>
+          <parameter type="gint" name="max" />
+        </parameters>
+      </constructor>
+      <method name="SetCursorVisible" cname="gtk_item_entry_set_cursor_visible">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="gboolean" name="visible" />
+        </parameters>
+      </method>
+      <method name="SetJustification" cname="gtk_item_entry_set_justification">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkJustification" name="just" />
+        </parameters>
+      </method>
+      <method name="SetMaxLengthBytes" cname="gtk_item_entry_set_max_length_bytes">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="gint" name="max_length_bytes" />
+        </parameters>
+      </method>
+      <method name="SetText" cname="gtk_item_entry_set_text">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-gchar*" name="text" />
+          <parameter type="GtkJustification" name="justification" />
+        </parameters>
+      </method>
+    </object>
+    <object name="SheetColumn" cname="GtkSheetColumn">
+      <implements>
+        <interface cname="GtkBuildable" />
+      </implements>
+      <method name="ButtonAddLabel" cname="gtk_sheet_column_button_add_label" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+          <parameter type="const-gchar*" name="label" />
+        </parameters>
+      </method>
+      <method name="ButtonGetLabel" cname="gtk_sheet_column_button_get_label" shared="true">
+        <return-type type="const-gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="ButtonJustify" cname="gtk_sheet_column_button_justify" deprecated="1" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+          <parameter type="GtkJustification" name="justification" />
+        </parameters>
+      </method>
+      <method name="Get" cname="gtk_sheet_column_get" shared="true">
+        <return-type type="GtkSheetColumn*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetDatatype" cname="gtk_sheet_column_get_datatype" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetDescription" cname="gtk_sheet_column_get_description" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetEntryType" cname="gtk_sheet_column_get_entry_type" shared="true">
+        <return-type type="GType" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetFormat" cname="gtk_sheet_column_get_format" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetIndex" cname="gtk_sheet_column_get_index">
+        <return-type type="gint" />
+      </method>
+      <method name="GetIskey" cname="gtk_sheet_column_get_iskey" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetJustification" cname="gtk_sheet_column_get_justification" shared="true">
+        <return-type type="GtkJustification" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetReadonly" cname="gtk_sheet_column_get_readonly" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetTooltipMarkup" cname="gtk_sheet_column_get_tooltip_markup" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetTooltipText" cname="gtk_sheet_column_get_tooltip_text" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetType" cname="gtk_sheet_column_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <method name="GetVjustification" cname="gtk_sheet_column_get_vjustification" shared="true">
+        <return-type type="GtkSheetVerticalJustification" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="LabelSetVisibility" cname="gtk_sheet_column_label_set_visibility" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+          <parameter type="gboolean" name="visible" />
+        </parameters>
+      </method>
+      <method name="Sensitive" cname="gtk_sheet_column_sensitive" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+        </parameters>
+      </method>
+      <method name="SetDatatype" cname="gtk_sheet_column_set_datatype" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gchar*" name="data_type" />
+        </parameters>
+      </method>
+      <method name="SetDescription" cname="gtk_sheet_column_set_description" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gchar*" name="description" />
+        </parameters>
+      </method>
+      <method name="SetEntryType" cname="gtk_sheet_column_set_entry_type" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-GType" name="entry_type" />
+        </parameters>
+      </method>
+      <method name="SetFormat" cname="gtk_sheet_column_set_format" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gchar*" name="format" />
+        </parameters>
+      </method>
+      <method name="SetIskey" cname="gtk_sheet_column_set_iskey" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gboolean" name="is_key" />
+        </parameters>
+      </method>
+      <method name="SetJustification" cname="gtk_sheet_column_set_justification" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+          <parameter type="GtkJustification" name="just" />
+        </parameters>
+      </method>
+      <method name="SetReadonly" cname="gtk_sheet_column_set_readonly" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gboolean" name="is_readonly" />
+        </parameters>
+      </method>
+      <method name="SetSensitivity" cname="gtk_sheet_column_set_sensitivity" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+          <parameter type="gboolean" name="sensitive" />
+        </parameters>
+      </method>
+      <method name="SetTooltipMarkup" cname="gtk_sheet_column_set_tooltip_markup" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gchar*" name="markup" />
+        </parameters>
+      </method>
+      <method name="SetTooltipText" cname="gtk_sheet_column_set_tooltip_text" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gchar*" name="text" />
+        </parameters>
+      </method>
+      <method name="SetVisibility" cname="gtk_sheet_column_set_visibility" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+          <parameter type="gboolean" name="visible" />
+        </parameters>
+      </method>
+      <method name="SetVjustification" cname="gtk_sheet_column_set_vjustification" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="col" />
+          <parameter type="GtkSheetVerticalJustification" name="vjust" />
+        </parameters>
+      </method>
+      <method name="TitlesVisible" cname="gtk_sheet_column_titles_visible" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="Visible" cname="gtk_sheet_column_visible" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+        </parameters>
+      </method>
+    </object>
+    <struct name="CursorInfo" cname="CursorInfo" opaque="true" />
+    <class name="Data" cname="GtkData_">
+      <method name="Format" cname="gtk_data_format" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="const-gchar*" name="str" />
+          <parameter type="const-gchar*" name="dataformat" />
+        </parameters>
+      </method>
+      <method name="FormatRemove" cname="gtk_data_format_remove" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="const-gchar*" name="str" />
+          <parameter type="const-gchar*" name="dataformat" />
+        </parameters>
+      </method>
+    </class>
+    <class name="Sheet" cname="GtkSheet_">
+      <method name="AddColumn" cname="gtk_sheet_add_column" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="ncols" />
+        </parameters>
+      </method>
+      <method name="AddRow" cname="gtk_sheet_add_row" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="nrows" />
+        </parameters>
+      </method>
+      <method name="Attach" cname="gtk_sheet_attach" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkWidget*" name="widget" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+          <parameter type="gint" name="xoptions" />
+          <parameter type="gint" name="yoptions" />
+          <parameter type="gint" name="xpadding" />
+          <parameter type="gint" name="ypadding" />
+        </parameters>
+      </method>
+      <method name="AttachDefault" cname="gtk_sheet_attach_default" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkWidget*" name="widget" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="AttachFloating" cname="gtk_sheet_attach_floating" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkWidget*" name="widget" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="Autoresize" cname="gtk_sheet_autoresize" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="AutoresizeColumns" cname="gtk_sheet_autoresize_columns" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="AutoresizeRows" cname="gtk_sheet_autoresize_rows" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="Autoscroll" cname="gtk_sheet_autoscroll" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="ButtonAttach" cname="gtk_sheet_button_attach" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkWidget*" name="widget" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="CellClear" cname="gtk_sheet_cell_clear" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="column" />
+        </parameters>
+      </method>
+      <method name="CellDelete" cname="gtk_sheet_cell_delete" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="column" />
+        </parameters>
+      </method>
+      <method name="CellGetState" cname="gtk_sheet_cell_get_state" shared="true">
+        <return-type type="GtkStateType" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="CellGetText" cname="gtk_sheet_cell_get_text" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="CellGetTooltipMarkup" cname="gtk_sheet_cell_get_tooltip_markup" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="row" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="CellGetTooltipText" cname="gtk_sheet_cell_get_tooltip_text" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="row" />
+          <parameter type="const-gint" name="col" />
+        </parameters>
+      </method>
+      <method name="CellIsMarkup" cname="gtk_sheet_cell_is_markup" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="CellSetTooltipMarkup" cname="gtk_sheet_cell_set_tooltip_markup" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="row" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gchar*" name="markup" />
+        </parameters>
+      </method>
+      <method name="CellSetTooltipText" cname="gtk_sheet_cell_set_tooltip_text" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="row" />
+          <parameter type="const-gint" name="col" />
+          <parameter type="const-gchar*" name="text" />
+        </parameters>
+      </method>
+      <method name="ChangeEntry" cname="gtk_sheet_change_entry" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GType" name="entry_type" />
+        </parameters>
+      </method>
+      <method name="ClipRange" cname="gtk_sheet_clip_range" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="clip_range" />
+        </parameters>
+      </method>
+      <method name="ClipText" cname="gtk_sheet_clip_text" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="ColumnsLabelsSetVisibility" cname="gtk_sheet_columns_labels_set_visibility" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="visible" />
+        </parameters>
+      </method>
+      <method name="ColumnsResizable" cname="gtk_sheet_columns_resizable" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="ColumnsSetResizable" cname="gtk_sheet_columns_set_resizable" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="resizable" />
+        </parameters>
+      </method>
+      <method name="ColumnsSetSensitivity" cname="gtk_sheet_columns_set_sensitivity" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="sensitive" />
+        </parameters>
+      </method>
+      <method name="Construct" cname="gtk_sheet_construct" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="rows" />
+          <parameter type="guint" name="columns" />
+          <parameter type="const-gchar*" name="title" />
+        </parameters>
+      </method>
+      <method name="ConstructBrowser" cname="gtk_sheet_construct_browser" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="rows" />
+          <parameter type="guint" name="columns" />
+          <parameter type="const-gchar*" name="title" />
+        </parameters>
+      </method>
+      <method name="ConstructWithCustomEntry" cname="gtk_sheet_construct_with_custom_entry" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="rows" />
+          <parameter type="guint" name="columns" />
+          <parameter type="const-gchar*" name="title" />
+          <parameter type="GType" name="entry_type" />
+        </parameters>
+      </method>
+      <method name="DeleteColumns" cname="gtk_sheet_delete_columns" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="col" />
+          <parameter type="guint" name="ncols" />
+        </parameters>
+      </method>
+      <method name="DeleteRows" cname="gtk_sheet_delete_rows" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="row" />
+          <parameter type="guint" name="nrows" />
+        </parameters>
+      </method>
+      <method name="EntrySelectRegion" cname="gtk_sheet_entry_select_region" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="start_pos" />
+          <parameter type="gint" name="end_pos" />
+        </parameters>
+      </method>
+      <method name="EntrySignalConnectChanged" cname="gtk_sheet_entry_signal_connect_changed" shared="true">
+        <return-type type="gulong" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GCallback" name="handler" />
+        </parameters>
+      </method>
+      <method name="EntrySignalDisconnectByFunc" cname="gtk_sheet_entry_signal_disconnect_by_func" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GCallback" name="handler" />
+        </parameters>
+      </method>
+      <method name="EntryTypeGetType" cname="gtk_sheet_entry_type_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <method name="Freeze" cname="gtk_sheet_freeze" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetActiveCell" cname="gtk_sheet_get_active_cell" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint*" name="row" />
+          <parameter type="gint*" name="column" />
+        </parameters>
+      </method>
+      <method name="GetAttributes" cname="gtk_sheet_get_attributes" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+          <parameter type="GtkSheetCellAttr*" name="attributes" />
+        </parameters>
+      </method>
+      <method name="GetCellArea" cname="gtk_sheet_get_cell_area" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="column" />
+          <parameter type="GdkRectangle*" name="area" />
+        </parameters>
+      </method>
+      <method name="GetChildAt" cname="gtk_sheet_get_child_at" shared="true">
+        <return-type type="const-GtkSheetChild*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetColumnTitle" cname="gtk_sheet_get_column_title" shared="true">
+        <return-type type="const-gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+        </parameters>
+      </method>
+      <method name="GetColumnWidth" cname="gtk_sheet_get_column_width" shared="true">
+        <return-type type="gint" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+        </parameters>
+      </method>
+      <method name="GetColumnsCount" cname="gtk_sheet_get_columns_count" shared="true">
+        <return-type type="guint" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetDescription" cname="gtk_sheet_get_description" shared="true">
+        <return-type type="const-gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gchar*" name="description" />
+        </parameters>
+      </method>
+      <method name="GetEntry" cname="gtk_sheet_get_entry" shared="true">
+        <return-type type="GtkWidget*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetEntryText" cname="gtk_sheet_get_entry_text" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetEntryType" cname="gtk_sheet_get_entry_type" shared="true">
+        <return-type type="GType" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetEntryWidget" cname="gtk_sheet_get_entry_widget" shared="true">
+        <return-type type="GtkWidget*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetHadjustment" cname="gtk_sheet_get_hadjustment" shared="true">
+        <return-type type="GtkAdjustment*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetLink" cname="gtk_sheet_get_link" shared="true">
+        <return-type type="gpointer" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="GetPixelInfo" cname="gtk_sheet_get_pixel_info" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GdkWindow*" name="window" />
+          <parameter type="gint" name="x" />
+          <parameter type="gint" name="y" />
+          <parameter type="gint*" name="row" />
+          <parameter type="gint*" name="column" />
+        </parameters>
+      </method>
+      <method name="GetRowTitle" cname="gtk_sheet_get_row_title" shared="true">
+        <return-type type="const-gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+        </parameters>
+      </method>
+      <method name="GetRowsCount" cname="gtk_sheet_get_rows_count" shared="true">
+        <return-type type="guint" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetSelection" cname="gtk_sheet_get_selection" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkSheetState*" name="state" />
+          <parameter type="GtkSheetRange*" name="range" />
+        </parameters>
+      </method>
+      <method name="GetState" cname="gtk_sheet_get_state" shared="true">
+        <return-type type="GtkSheetState" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetTooltipMarkup" cname="gtk_sheet_get_tooltip_markup" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetTooltipText" cname="gtk_sheet_get_tooltip_text" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetType" cname="gtk_sheet_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <method name="GetVadjustment" cname="gtk_sheet_get_vadjustment" shared="true">
+        <return-type type="GtkAdjustment*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GetVisibleRange" cname="gtk_sheet_get_visible_range" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkSheetRange*" name="range" />
+        </parameters>
+      </method>
+      <method name="GetVjustification" cname="gtk_sheet_get_vjustification" shared="true">
+        <return-type type="GtkSheetVerticalJustification" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="GridVisible" cname="gtk_sheet_grid_visible" deprecated="1" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="HideColumnTitles" cname="gtk_sheet_hide_column_titles" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="HideRowTitles" cname="gtk_sheet_hide_row_titles" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="InClip" cname="gtk_sheet_in_clip" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="InsertColumns" cname="gtk_sheet_insert_columns" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="col" />
+          <parameter type="guint" name="ncols" />
+        </parameters>
+      </method>
+      <method name="InsertRows" cname="gtk_sheet_insert_rows" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="row" />
+          <parameter type="guint" name="nrows" />
+        </parameters>
+      </method>
+      <method name="IsFrozen" cname="gtk_sheet_is_frozen" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="JustifyEntry" cname="gtk_sheet_justify_entry" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="LinkCell" cname="gtk_sheet_link_cell" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+          <parameter type="gpointer" name="link" />
+        </parameters>
+      </method>
+      <method name="Locked" cname="gtk_sheet_locked" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="MoveChild" cname="gtk_sheet_move_child" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkWidget*" name="widget" />
+          <parameter type="gint" name="x" />
+          <parameter type="gint" name="y" />
+        </parameters>
+      </method>
+      <method name="Moveto" cname="gtk_sheet_moveto" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="column" />
+          <parameter type="gint" name="row_align" />
+          <parameter type="gint" name="col_align" />
+        </parameters>
+      </method>
+      <method name="New" cname="gtk_sheet_new" shared="true">
+        <return-type type="GtkWidget*" />
+        <parameters>
+          <parameter type="guint" name="rows" />
+          <parameter type="guint" name="columns" />
+          <parameter type="const-gchar*" name="title" />
+        </parameters>
+      </method>
+      <method name="NewBrowser" cname="gtk_sheet_new_browser" shared="true">
+        <return-type type="GtkWidget*" />
+        <parameters>
+          <parameter type="guint" name="rows" />
+          <parameter type="guint" name="columns" />
+          <parameter type="const-gchar*" name="title" />
+        </parameters>
+      </method>
+      <method name="NewWithCustomEntry" cname="gtk_sheet_new_with_custom_entry" shared="true">
+        <return-type type="GtkWidget*" />
+        <parameters>
+          <parameter type="guint" name="rows" />
+          <parameter type="guint" name="columns" />
+          <parameter type="const-gchar*" name="title" />
+          <parameter type="GType" name="entry_type" />
+        </parameters>
+      </method>
+      <method name="Put" cname="gtk_sheet_put" shared="true">
+        <return-type type="GtkSheetChild*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkWidget*" name="child" />
+          <parameter type="gint" name="x" />
+          <parameter type="gint" name="y" />
+        </parameters>
+      </method>
+      <method name="RangeClear" cname="gtk_sheet_range_clear" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="range" />
+        </parameters>
+      </method>
+      <method name="RangeDelete" cname="gtk_sheet_range_delete" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="range" />
+        </parameters>
+      </method>
+      <method name="RangeGetType" cname="gtk_sheet_range_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <method name="RangeSetBackground" cname="gtk_sheet_range_set_background" deprecated="1" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="const-GdkRGBA*" name="color" />
+        </parameters>
+      </method>
+      <method name="RangeSetBorder" cname="gtk_sheet_range_set_border" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="gint" name="mask" />
+          <parameter type="guint" name="width" />
+          <parameter type="cairo_line_cap_t" name="cap_style" />
+          <parameter type="cairo_line_join_t" name="join_style" />
+        </parameters>
+      </method>
+      <method name="RangeSetBorderColor" cname="gtk_sheet_range_set_border_color" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="const-GdkRGBA*" name="color" />
+        </parameters>
+      </method>
+      <method name="RangeSetCssClass" cname="gtk_sheet_range_set_css_class" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="gchar*" name="css_class" />
+        </parameters>
+      </method>
+      <method name="RangeSetEditable" cname="gtk_sheet_range_set_editable" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="gint" name="editable" />
+        </parameters>
+      </method>
+      <method name="RangeSetFont" cname="gtk_sheet_range_set_font" deprecated="1" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="PangoFontDescription*" name="font_desc" />
+        </parameters>
+      </method>
+      <method name="RangeSetForeground" cname="gtk_sheet_range_set_foreground" deprecated="1" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="const-GdkRGBA*" name="color" />
+        </parameters>
+      </method>
+      <method name="RangeSetJustification" cname="gtk_sheet_range_set_justification" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="GtkJustification" name="just" />
+        </parameters>
+      </method>
+      <method name="RangeSetVisible" cname="gtk_sheet_range_set_visible" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="urange" />
+          <parameter type="gboolean" name="visible" />
+        </parameters>
+      </method>
+      <method name="RemoveLink" cname="gtk_sheet_remove_link" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+        </parameters>
+      </method>
+      <method name="RowButtonAddLabel" cname="gtk_sheet_row_button_add_label" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="const-gchar*" name="label" />
+        </parameters>
+      </method>
+      <method name="RowButtonGetLabel" cname="gtk_sheet_row_button_get_label" shared="true">
+        <return-type type="const-gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+        </parameters>
+      </method>
+      <method name="RowButtonJustify" cname="gtk_sheet_row_button_justify" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="GtkJustification" name="justification" />
+        </parameters>
+      </method>
+      <method name="RowGetTooltipMarkup" cname="gtk_sheet_row_get_tooltip_markup" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="row" />
+        </parameters>
+      </method>
+      <method name="RowGetTooltipText" cname="gtk_sheet_row_get_tooltip_text" shared="true">
+        <return-type type="gchar*" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="row" />
+        </parameters>
+      </method>
+      <method name="RowLabelSetVisibility" cname="gtk_sheet_row_label_set_visibility" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gboolean" name="visible" />
+        </parameters>
+      </method>
+      <method name="RowSensitive" cname="gtk_sheet_row_sensitive" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+        </parameters>
+      </method>
+      <method name="RowSetSensitivity" cname="gtk_sheet_row_set_sensitivity" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gboolean" name="sensitive" />
+        </parameters>
+      </method>
+      <method name="RowSetTooltipMarkup" cname="gtk_sheet_row_set_tooltip_markup" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="row" />
+          <parameter type="const-gchar*" name="markup" />
+        </parameters>
+      </method>
+      <method name="RowSetTooltipText" cname="gtk_sheet_row_set_tooltip_text" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gint" name="row" />
+          <parameter type="const-gchar*" name="text" />
+        </parameters>
+      </method>
+      <method name="RowSetVisibility" cname="gtk_sheet_row_set_visibility" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gboolean" name="visible" />
+        </parameters>
+      </method>
+      <method name="RowTitlesVisible" cname="gtk_sheet_row_titles_visible" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="RowVisible" cname="gtk_sheet_row_visible" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+        </parameters>
+      </method>
+      <method name="RowsLabelsSetVisibility" cname="gtk_sheet_rows_labels_set_visibility" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="visible" />
+        </parameters>
+      </method>
+      <method name="RowsResizable" cname="gtk_sheet_rows_resizable" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="RowsSetResizable" cname="gtk_sheet_rows_set_resizable" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="resizable" />
+        </parameters>
+      </method>
+      <method name="RowsSetSensitivity" cname="gtk_sheet_rows_set_sensitivity" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="sensitive" />
+        </parameters>
+      </method>
+      <method name="SelectColumn" cname="gtk_sheet_select_column" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+        </parameters>
+      </method>
+      <method name="SelectRange" cname="gtk_sheet_select_range" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-GtkSheetRange*" name="range" />
+        </parameters>
+      </method>
+      <method name="SelectRow" cname="gtk_sheet_select_row" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+        </parameters>
+      </method>
+      <method name="SetActiveCell" cname="gtk_sheet_set_active_cell" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="column" />
+        </parameters>
+      </method>
+      <method name="SetAutoresize" cname="gtk_sheet_set_autoresize" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="autoresize" />
+        </parameters>
+      </method>
+      <method name="SetAutoresizeColumns" cname="gtk_sheet_set_autoresize_columns" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="autoresize" />
+        </parameters>
+      </method>
+      <method name="SetAutoresizeRows" cname="gtk_sheet_set_autoresize_rows" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="autoresize" />
+        </parameters>
+      </method>
+      <method name="SetAutoscroll" cname="gtk_sheet_set_autoscroll" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="autoscroll" />
+        </parameters>
+      </method>
+      <method name="SetBackground" cname="gtk_sheet_set_background" deprecated="1" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GdkRGBA*" name="color" />
+        </parameters>
+      </method>
+      <method name="SetCell" cname="gtk_sheet_set_cell" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+          <parameter type="GtkJustification" name="justification" />
+          <parameter type="const-gchar*" name="text" />
+        </parameters>
+      </method>
+      <method name="SetCellMarkup" cname="gtk_sheet_set_cell_markup" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+          <parameter type="const-gchar*" name="markup" />
+        </parameters>
+      </method>
+      <method name="SetCellText" cname="gtk_sheet_set_cell_text" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="gint" name="col" />
+          <parameter type="const-gchar*" name="text" />
+        </parameters>
+      </method>
+      <method name="SetClipText" cname="gtk_sheet_set_clip_text" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="clip_text" />
+        </parameters>
+      </method>
+      <method name="SetColumnTitle" cname="gtk_sheet_set_column_title" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+          <parameter type="const-gchar*" name="title" />
+        </parameters>
+      </method>
+      <method name="SetColumnTitlesHeight" cname="gtk_sheet_set_column_titles_height" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="height" />
+        </parameters>
+      </method>
+      <method name="SetColumnWidth" cname="gtk_sheet_set_column_width" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="column" />
+          <parameter type="guint" name="width" />
+        </parameters>
+      </method>
+      <method name="SetCssClass" cname="gtk_sheet_set_css_class" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gchar*" name="css_class" />
+        </parameters>
+      </method>
+      <method name="SetDescription" cname="gtk_sheet_set_description" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gchar*" name="description" />
+        </parameters>
+      </method>
+      <method name="SetEntryEditable" cname="gtk_sheet_set_entry_editable" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gboolean" name="editable" />
+        </parameters>
+      </method>
+      <method name="SetEntryText" cname="gtk_sheet_set_entry_text" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gchar*" name="text" />
+        </parameters>
+      </method>
+      <method name="SetGrid" cname="gtk_sheet_set_grid" deprecated="1" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GdkRGBA*" name="color" />
+        </parameters>
+      </method>
+      <method name="SetHadjustment" cname="gtk_sheet_set_hadjustment" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkAdjustment*" name="adjustment" />
+        </parameters>
+      </method>
+      <method name="SetJustifyEntry" cname="gtk_sheet_set_justify_entry" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="justify" />
+        </parameters>
+      </method>
+      <method name="SetLocked" cname="gtk_sheet_set_locked" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="locked" />
+        </parameters>
+      </method>
+      <method name="SetRowHeight" cname="gtk_sheet_set_row_height" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="guint" name="height" />
+        </parameters>
+      </method>
+      <method name="SetRowTitle" cname="gtk_sheet_set_row_title" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gint" name="row" />
+          <parameter type="const-gchar*" name="title" />
+        </parameters>
+      </method>
+      <method name="SetRowTitlesWidth" cname="gtk_sheet_set_row_titles_width" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="guint" name="width" />
+        </parameters>
+      </method>
+      <method name="SetSelectionMode" cname="gtk_sheet_set_selection_mode" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkSelectionMode" name="mode" />
+        </parameters>
+      </method>
+      <method name="SetTabDirection" cname="gtk_sheet_set_tab_direction" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkDirectionType" name="dir" />
+        </parameters>
+      </method>
+      <method name="SetTitle" cname="gtk_sheet_set_title" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gchar*" name="title" />
+        </parameters>
+      </method>
+      <method name="SetTooltipMarkup" cname="gtk_sheet_set_tooltip_markup" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gchar*" name="markup" />
+        </parameters>
+      </method>
+      <method name="SetTooltipText" cname="gtk_sheet_set_tooltip_text" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="const-gchar*" name="text" />
+        </parameters>
+      </method>
+      <method name="SetVadjustment" cname="gtk_sheet_set_vadjustment" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkAdjustment*" name="adjustment" />
+        </parameters>
+      </method>
+      <method name="SetVjustification" cname="gtk_sheet_set_vjustification" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="GtkSheetVerticalJustification" name="vjust" />
+        </parameters>
+      </method>
+      <method name="ShowColumnTitles" cname="gtk_sheet_show_column_titles" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="ShowGrid" cname="gtk_sheet_show_grid" deprecated="1" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+          <parameter type="gboolean" name="show" />
+        </parameters>
+      </method>
+      <method name="ShowRowTitles" cname="gtk_sheet_show_row_titles" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="Thaw" cname="gtk_sheet_thaw" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="UnclipRange" cname="gtk_sheet_unclip_range" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="UnselectRange" cname="gtk_sheet_unselect_range" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkSheet*" name="sheet" />
+        </parameters>
+      </method>
+      <method name="VerticalJustificationGetType" cname="gtk_sheet_vertical_justification_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+    </class>
+  </namespace>
+</api>

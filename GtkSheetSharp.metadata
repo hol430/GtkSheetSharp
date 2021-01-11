@@ -110,6 +110,12 @@
   <!-- fixme: temporarily hide gtkitementry (it causes a runtime error) -->
   <attr path="/api/namespace/object[@cname='GtkItemEntry']" name="hidden">1</attr>
 
+  <!-- Column.Sensitive hides inherited member Widget.Sensitive in the C# API. Need to use the new keyword. -->
+  <attr path="/api/namespace/object[@cname='GtkSheetColumn']/method[@cname='gtk_sheet_column_sensitive']" name="new_flag">true</attr>
+
+  <!-- Column.Visible hides inherited member Widget.Visible in the C# API. Need to use the new keyword. -->
+  <attr path="/api/namespace/object[@cname='GtkSheetColumn']/method[@cname='gtk_sheet_column_visible']" name="new_flag">true</attr>
+
   <!-- ############# -->
   <!-- 6. Move Nodes -->
   <!-- ############# -->
