@@ -18,4 +18,4 @@ mkdir $outdir
 cp $tempapi $api
 
 gapi3-fixup --api=$api --metadata=$metadata || exit
-gapi3-codegen --outdir=$outdir `pkg-config --cflags gtk-sharp-3.0` --include=../GtkSharp/Source/Libs/CairoSharp/Generated/CairoSharp-api.xml --generate $api
+gapi3-codegen --outdir=$outdir `pkg-config --cflags gtk-sharp-3.0` --include=cairo-api.xml --generate $api

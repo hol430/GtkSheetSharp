@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api>
+  <namespace name="Cairo">
+    <enum cname="cairo_line_cap_t" name="LineCap" type="enum" />
+    <enum cname="cairo_line_join_t" name="LineJoin" type="enum" />
+  </namespace>
+</api>
