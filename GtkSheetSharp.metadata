@@ -25,7 +25,7 @@
   <add-node path="/api/namespace">
     <struct name="Range" cname="GtkSheetRange">
       <field name="Row0" cname="row0" type="gint" />
-      <field name="Cow0" cname="col0" type="gint" />
+      <field name="Col0" cname="col0" type="gint" />
       <field name="RowI" cname="rowi" type="gint" />
       <field name="ColI" cname="coli" type="gint" />
     </struct>
